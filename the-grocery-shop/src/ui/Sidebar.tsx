@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Logo from "./Logo.tsx";
+// import MainNav from "./MainNav.tsx";
 
 const StyledSidebar=styled.aside`
     background-color: var(--color-grey-0);
@@ -10,3 +12,13 @@ const StyledSidebar=styled.aside`
     flex-direction: column;
     gap: 3.2rem;
 `
+function Sidebar(){
+    return (
+        <StyledSidebar>
+            <Logo/>
+            sidebar
+            {/*<MainNav/>*/}
+        </StyledSidebar>
+    )
+}
+export default Sidebar;
