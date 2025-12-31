@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "./Logo.tsx";
+import MainNav from "./MainNav.tsx";
 // import MainNav from "./MainNav.tsx";
 
 const StyledSidebar=styled.aside`
@@ -16,8 +17,7 @@ function Sidebar(){
     return (
         <StyledSidebar>
             <Logo/>
-            sidebar
-            {/*<MainNav/>*/}
+            <MainNav/>
         </StyledSidebar>
     )
 }
