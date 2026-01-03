@@ -1,5 +1,8 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+
 import Dashboard from "./pages/Dashboard.tsx";
 import PageNotFound from "./pages/PageNotFound.tsx";
 import GlobalStyles from "./styles/GlobalStyles.ts";
@@ -8,6 +11,8 @@ import Product from "./pages/Product.tsx";
 import Settings from "./pages/Settings.tsx";
 import Users from "./pages/Users.tsx";
 import Menus from "./pages/Menus.tsx";
+
+
 
 function App() {
 const queryClient =new QueryClient({
@@ -22,6 +27,7 @@ const queryClient =new QueryClient({
 });
     return (
         <QueryClientProvider client={queryClient}>
+            <ReactQueryDevtools initialIsOpen={false} />
             <GlobalStyles/>
             <BrowserRouter>
                 <Routes >
