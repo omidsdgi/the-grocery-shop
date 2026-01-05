@@ -5,7 +5,7 @@ export async function getProducts() {
         .select('*')
     if (error) {
         console.log(error.message);
-        throw new Error('Product not found!');
+        throw new Error('Products not found!');
     }
     return product;
 }
