@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import {useQuery} from "@tanstack/react-query";
+import {getProducts} from "../../services/apiProducts.ts";
+import Spinner from "../../ui/Spinner.tsx";
 
 const StyledTable = styled.div`
     border: 1px solid var(--color-grey-200);
@@ -23,5 +26,23 @@ const TableHeader = styled.header`
     color: var(--color-grey-600);
     padding: 1.6rem 2.4rem;
 `;
+
+export default function ProductTable() {
+    const {
+        isLoading,
+
+    }= useQuery({
+        queryKey:["products"],
+        queryFn: getProducts
+    })
+    if (isLoading) return <Spinner />;
+    return (
+        <StyledTable>
+            <TableHeader>table of product</TableHeader>
+
+        </StyledTable>
+    );
+}
+
 
 
